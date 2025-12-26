@@ -1,0 +1,32 @@
+server:
+  port: 8000
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: apigateway-service
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: first-service
+              uri: http://localhost:8081/
+              predicates:
+                - Path=/first-service/**
+              filters:
+                - AddRequestHeader=f-request, 1st-request-header-by-yaml
+                - AddResponseHeader=f-response, 1st-response-header-from-yaml
+            - id: second-service
+              uri: http://localhost:8082/
+              predicates:
+                - Path=/second-service/**
+              filters:
+                - AddRequestHeader=f-request, 2st-request-header-by-yaml
+                - AddResponseHeader=f-response, 2st-response-header-from-yaml
