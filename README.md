@@ -8,6 +8,12 @@
 * API Gateway(Spring Cloud Gateway)에서 **MVC 기반 서비스와 WebFlux 기반 서비스**를 동시에 라우팅
 * Gateway Filter를 **YAML 설정 방식**과 **Java 코드 방식** 두 가지로 구현하여 동작 차이 및 제어 범위 확인
 
+### 실습할 프로젝트 내용 
+- 상품 조회 , 사용자 조회 , 상품 주문을 각각 msa 환경을 통해 설계.
+<img width="873" height="457" alt="image" src="https://github.com/user-attachments/assets/1f39e2a9-0465-4a37-92fc-c9250bb7b514" />
+
+
+
 ---
 
 ## 2. 프로젝트 구조
